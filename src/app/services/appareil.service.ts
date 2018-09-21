@@ -15,6 +15,15 @@ export class AppareilService {
       appareil.status = 'éteint';
     }
   }
+
+  switchOnOne(i: number) {
+    console.log(this.appareils[i]);
+    this.appareils[i].status = 'allumé';
+  }
+
+  switchOffOne(i: number) {
+    this.appareils[i].status = 'éteint';
+  }
   appareils:any = [
     {
       name: 'Machine à laver',

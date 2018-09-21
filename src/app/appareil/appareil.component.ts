@@ -11,13 +11,19 @@ export class AppareilComponent implements OnInit {
   @Input() appareilName: string = "okokok";
   @Input() appareilStatus: string;
   @Input() appareilNbr: Number = 0;
-
-
+  @Input() index: number;
+  constructor(private appareilService: AppareilService) { }
 
   ngOnInit() {
   }
 
-
+  onSwitch() {
+    if(this.appareilStatus === 'allumé') {
+      this.appareilService.switchOffOne(this.index);
+    } else if(this.appareilStatus === 'éteint') {
+      this.appareilService.switchOnOne(this.index);
+    }
+  }
 
   getStatus() {
     return this.appareilStatus;

@@ -10,10 +10,11 @@
         <app-appareil [appareilName]="appareilThree" [appareilStatus]="'éteint'"></app-appareil>
       </ul>-->
       <ul class="list-group">
-        <app-appareil  *ngFor="let appareil of appareils"
+        <app-appareil  *ngFor="let appareil of appareils; let i = index"
                        [appareilName]="appareil.name"
                        [appareilStatus]="appareil.status"
-                       [appareilNbr]="appareil.loveIts" ></app-appareil>
+                       [appareilNbr]="appareil.loveIts"
+                       [index]="i"></app-appareil>
       </ul>
       <button class="btn btn-success"
               [disabled]="!isAuth"
